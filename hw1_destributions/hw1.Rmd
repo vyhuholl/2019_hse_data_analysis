@@ -10,5 +10,5 @@ q = function(x, mu = 3, s = 0.5) {qlnorm(x, mu, s)}
 lower = q(0.1)
 upper = q(0.9)
 f = function(x, mu = 3, s = 0.5) {dlnorm(x, mu, s)}
-integrate(f, lower = 0.1, upper = 0.9)
+integrate(f, lower = lower, upper = upper)
 ```
