@@ -1,0 +1,22 @@
+```{r}
+library(tidyverse)
+data = read.csv(file='hw2_phoible.csv')
+```
+### 2.1
+```{r}
+max_cons = 0
+lang_with_max_cons = ''
+for(i in 1:nrow(data)) {
+    row <- data[i,]
+    cons = row['consonants'] / row['phonemes']
+    if (cons > max_cons) {
+      max_cons = cons
+      lang_with_max_cons = row['language']
+    }
+}
+print(lang_with_max_cons)
+```
+### 2.2
+```{r}
+
+```
