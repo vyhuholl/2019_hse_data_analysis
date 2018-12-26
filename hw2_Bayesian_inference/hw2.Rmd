@@ -1,5 +1,4 @@
 ```{r}
-library(tidyverse)
 data = read.csv(file='hw2_phoible.csv')
 ```
 ### 2.1
@@ -18,5 +17,10 @@ print(lang_with_max_cons)
 ```
 ### 2.2
 ```{r}
-
+alpha <- 9.300246
+beta <- 4.4545
+data$lang <- (data$consonants + alpha)/(data$phonemes + beta + alpha)
+data$cons_percent = data$consonants / data$phonemes
+data$diff = abs(data$cons_percent - data$lang)
+data[order(data$diff, decreasing = T)[1:6],][1]
 ```
